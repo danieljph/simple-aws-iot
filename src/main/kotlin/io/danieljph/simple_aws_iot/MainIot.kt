@@ -8,10 +8,13 @@ fun main()
 {
     testConnect("a200oqh54iecas-ats.iot.us-east-1.amazonaws.com")
     testConnect("a23x7roz31nypq-ats.iot.us-east-1.amazonaws.com")
+    testConnect("a200oqh54iecas-ats.iot.ap-southeast-1.amazonaws.com")
 }
 
 fun testConnect(endpoint: String)
 {
+    println("====================================================")
+    println("Test connect with endpoint: $endpoint")
     val thingName = "00000810209232"
     val certificatePathname = "ssl/00000810209232-certificate.pem.crt"
     val privateKeyPathname = "ssl/00000810209232-private.pem.key"
@@ -41,4 +44,5 @@ fun testConnect(endpoint: String)
     Thread.sleep(5_000)
     client.disconnect()
     Thread.sleep(1_000)
+    println("====================================================")
 }
